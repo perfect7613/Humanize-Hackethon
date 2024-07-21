@@ -8,7 +8,6 @@ crew = Crew(
     process=Process.sequential,
 )
 
-
 data = {
     'name': 'John Doe',
     'age': 35,
@@ -16,9 +15,10 @@ data = {
     'income': 60000,
     'outstanding_debts': 5000,
     'payment_history': 'Timely',
-    'credit_mix': 'Diverse',
-    'Cibil Score': 500,
-    'Location': 'Mumbai'
+    'Cibil Score': 750,
+    'City': 'Bengaluru',
+    'expenses': 'High',
+    'financial_goals': 'House',
 }
 
 result=crew.kickoff(inputs={'data': data})

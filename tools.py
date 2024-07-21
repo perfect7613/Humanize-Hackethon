@@ -13,7 +13,12 @@ config = dict(
     llm=dict(
         provider="google",
         config=dict(model='gemini-1.5-flash')
-    )
+    ),
+    embedder=dict(
+        provider="google",
+        config=dict(model='models/text-embedding-004')
+    ),
 )
+
 
 csv_tool = CSVSearchTool(csv='./data/Credit_card_transactions_-_India_-_Simple.csv', config=config)

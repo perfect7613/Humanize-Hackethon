@@ -27,9 +27,9 @@ financialadvisor_task = Task(
     description=(
         "Analyze the user's spending habits based on the data in the CSV file and perform additional financial analysis. "
         "Provide personalized financial advice based on these analyses. Your recommendations should help the user optimize "
-        "their spending and saving strategies."
+        "their spending and saving strategies and also suggest recommendations for banks and loans based on the previous data you got from the previous agents."
     ),
-    expected_output='A detailed financial recommendation report based on the user’s spending habits and additional analysis.',
+    expected_output='A detailed financial recommendation report and banks suggestions based on the user’s spending habits and previous agents data.',
     tools=[csv_tool],
     agent=financial_advisor_agent,
     async_execution=False,
