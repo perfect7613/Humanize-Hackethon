@@ -2,6 +2,7 @@ from crewai import Agent
 from dotenv import load_dotenv
 load_dotenv()
 from tools import tool
+from tools import csv_tool
 from langchain_google_genai import ChatGoogleGenerativeAI
 import os
 
@@ -26,19 +27,6 @@ loan_info_agent=Agent(
 )
 
 
-cibil_score_agent=Agent(
-    role="CIBIL Score Calculator",
-    goal='Calculate the CIBIL score of a user based on their financial {data}.',
-    verbose=True,
-    memory=True,
-    backstory=(
-        "Your expertise in credit scoring helps users understand their creditworthiness and eligibility for loans."
-    ),
-    tools=[tool],
-    llm=llm,
-    allow_delegation=True
-)
-
 loan_recommendation_agent=Agent(
     role="Loan Recommendation Expert",
     goal='Recommend the best banks for a loan based on user {data} and CIBIL score.',
@@ -48,5 +36,19 @@ loan_recommendation_agent=Agent(
         "You analyze user information and loan offerings to recommend the most suitable banks."
     ),
     tools=[tool],
+    llm=llm,
+    allow_delegation=True
+)
+
+financial_advisor_agent = Agent(
+    role='Financial Advisor',
+    goal='Recommend financial strategies based on spending habits data',
+    verbose=True,
+    memory=True,
+    backstory=(
+        "You are an experienced financial advisor with expertise in analyzing spending habits and providing "
+        "personalized financial advice. Your insights help individuals make informed financial decisions."
+    ),
+    tools=[csv_tool],
     llm=llm,
 )

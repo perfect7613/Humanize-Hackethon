@@ -1,20 +1,25 @@
 from crewai import Crew,Process
-from tasks import fetch_loan_info_task, calculate_cibil_score_task, recommend_banks_task
-from agents import loan_info_agent, cibil_score_agent, loan_recommendation_agent
+from tasks import fetch_loan_info_task, recommend_banks_task, financialadvisor_task
+from agents import loan_info_agent, loan_recommendation_agent, financial_advisor_agent
 
 crew = Crew(
-    agents=[loan_info_agent, cibil_score_agent, loan_recommendation_agent],
-    tasks=[fetch_loan_info_task, calculate_cibil_score_task, recommend_banks_task],
+    agents=[loan_info_agent, loan_recommendation_agent, financial_advisor_agent],
+    tasks=[fetch_loan_info_task, recommend_banks_task, financialadvisor_task],
     process=Process.sequential,
 )
 
-user_info = {
+
+data = {
     'name': 'John Doe',
     'age': 35,
     'credit_history': 'Good',
     'income': 60000,
-    'cibil_score': 750
+    'outstanding_debts': 5000,
+    'payment_history': 'Timely',
+    'credit_mix': 'Diverse',
+    'Cibil Score': 500,
+    'Location': 'Mumbai'
 }
 
-result=crew.kickoff(inputs={'data': user_info})
+result=crew.kickoff(inputs={'data': data})
 print(result)
