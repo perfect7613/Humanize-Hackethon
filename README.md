@@ -2,7 +2,7 @@
 
 The CrewAI Financial Assistant is a sophisticated Python application designed to provide comprehensive financial advice, loan information, and bank recommendations tailored to users' specific financial data. Utilizing advanced AI agents, the application analyzes users' financial data, spending habits, and credit scores to offer personalized advice and recommendations.
 
-- **Youdata Dataset Used Link: https://www.youdata.ai/datasets/65d5c7915e04f50586a72f9c
+- Youdata Dataset Used Link: https://www.youdata.ai/datasets/65d5c7915e04f50586a72f9c
 
 ## Features
 
