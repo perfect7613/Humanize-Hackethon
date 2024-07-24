@@ -30,3 +30,4 @@ These agents utilize tools defined in `tools.py`, including `SerperDevTool` for 
    python -m venv myvenv
    source myvenv/bin/activate # On Windows use `myvenv\Scripts\activate`
 4. Install required dependencies by pip install -r requirements.txt
+5. Make a .env file and add the SerperApi Key from https://serper.dev and Google Gemini Api Key from https://ai.google.dev
